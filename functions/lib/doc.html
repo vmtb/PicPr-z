@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Documentation</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+  </head>
+
+  <body class="bg-success">
+    <div class="container text-white">
+      <h2>Documentation</h2>
+      <div class="row align-items-center">
+        <div class="col-2">
+          <h3>Base URL:</h3>
+        </div>
+        <div class="col-10 text-white">
+          <a
+            class="text-white"
+            href="https://us-central1-picpr-z.cloudfunctions.net/webApi/api/v1"
+            >https://us-central1-picpr-z.cloudfunctions.net/webApi/api/v1</a
+          >
+        </div>
+      </div>
+      <table class="table table-striped">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Lien</th>
+            <th scope="col">Methode</th>
+            <th scope="col">Description</th>
+            <th scope="col" colspan="2">Params</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">/users</th>
+            <th scope="col">POST</th>
+            <th scope="col">Permet d'ajouter les utilisateurs authentifiés</th>
+            <th scope="col">
+              <p>age <span class="small text-white">: Entier</span></p>
+              <p>displayName <span class="small text-white">: String</span></p>
+              <p>email <span class="small text-white">: String</span></p>
+              <p>phoneNumber <span class="small text-white">: String</span></p>
+              <p>online <span class="small text-white">: long</span></p>
+              <p>photoURL <span class="small text-white">: String</span></p>
+              <p>uid <span class="small text-white">: String</span></p>
+            </th>
+          </tr>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">/users</th>
+            <th scope="col">GET</th>
+            <th scope="col">
+              Récupérer la liste des utilisateurs authentifiés
+            </th>
+            <th scope="col"></th>
+          </tr>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">/contact</th>
+            <th scope="col">POST</th>
+            <th scope="col">Permet d'ajouter un contact</th>
+            <th scope="col">
+              <p>
+                senderId
+                <span class="small text-white"
+                  >: String (id de celui qui envoie la requête)</span
+                >
+              </p>
+              <p>
+                receiverId
+                <span class="small text-white"
+                  >: String (id de celui à qui la demande est destinée)</span
+                >
+              </p>
+            </th>
+          </tr>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">/contacts/{contactId}</th>
+            <th scope="col">DELETE</th>
+            <th scope="col">Permet de supprimer un contact</th>
+            <th scope="col">
+              <p>
+                contactId
+                <span class="small text-white"
+                  >: String (id de la rêquête d'ajout de contact; doit rester
+                  dans le lien)</span
+                >
+              </p>
+            </th>
+          </tr>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">/contacts/{contactId}</th>
+            <th scope="col">PATCH</th>
+            <th scope="col">Permet de bloquer un contact</th>
+            <th scope="col">
+              <p>
+                contactId
+                <span class="small text-white"
+                  >: String (id de la rêquête d'ajout de contact; doit rester
+                  dans le lien)</span
+                >
+              </p>
+            </th>
+          </tr>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">/contacts/{userId}</th>
+            <th scope="col">GET</th>
+            <th scope="col">
+              Récupérer de récupérer la liste des amis d'un utilisateur
+            </th>
+            <th scope="col">
+              <p>
+                userId
+                <span class="small text-white"
+                  >: String (id de l'utilisateur; doit rester dans le
+                  lien)</span
+                >
+              </p>
+            </th>
+          </tr>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">/pp-requests</th>
+            <th scope="col">POST</th>
+            <th scope="col">Permet d'envoyer une requête de photo</th>
+            <th scope="col">
+              <p>senderId <span class="small text-white">: String</span></p>
+              <p>reveiverId <span class="small text-white">: String</span></p>
+            </th>
+          </tr>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">/pp-feedback</th>
+            <th scope="col">POST</th>
+            <th scope="col">Permet d'envoyer une requête de photo</th>
+            <th scope="col">
+              <p>
+                pp_requestId
+                <span class="small text-white"
+                  >: String (Id de la requête)</span
+                >
+              </p>
+              <p>
+                picUrl
+                <span class="small text-white"
+                  >: String (le lien de l'image uploadé, doit commencer par
+                  https)</span
+                >
+              </p>
+              <p>label <span class="small text-white">: String</span></p>
+              <p>
+                type
+                <span class="small text-white"
+                  >: String ("accepted" ou "rejected") précise si la requête est
+                  acceptée ou pas</span
+                >
+              </p>
+            </th>
+          </tr>
+
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">/pp-requests-lists</th>
+            <th scope="col">POST</th>
+            <th scope="col">Récupérer une conversation</th>
+            <th scope="col">
+              <p>
+                senderId
+                <span class="small text-white"
+                  >: String (id de celui qui envoie la requête)</span
+                >
+              </p>
+              <p>
+                receiverId
+                <span class="small text-white"
+                  >: String (id de celui à qui la demande est destinée)</span
+                >
+              </p>
+            </th>
+          </tr>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">/mycontacts</th>
+            <th scope="col">POST</th>
+            <th scope="col">
+              Récupérer une conversation<br />Retourne les ids de tous les
+              utilisateurs PicPriz de cette liste de contacts
+            </th>
+            <th scope="col">
+              <p>
+                userContacts
+                <span class="small text-white"
+                  >: String (la liste des contacts séparés par ';')</span
+                >
+              </p>
+            </th>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>
